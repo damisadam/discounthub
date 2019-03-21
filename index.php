@@ -12,11 +12,9 @@ $resultss = $db->select($query);
 $query = "select * from products WHERE hot_deal = 1 ORDER BY id DESC LIMIT 6";
 $deals = $db->select($query);
 
-$query = "select * from stores ORDER BY id DESC LIMIT 8";
+$query = "select * from stores ORDER BY id DESC LIMIT 6";
 $stores = $db->select($query);
 
-$query = "select * from categories ORDER BY id DESC LIMIT 8";
-$categories = $db->select($query);
 /*print_r($stores);
 die;*/
 ?>
@@ -36,10 +34,9 @@ die;*/
 				<div class="banner_product_image"><img style="width: 400px" src="admin/uploads/product/<?php echo $results[0]['product_image'];?>" alt=""></div>
 				<div class="col-lg-5 offset-lg-4 fill_height">
 					<div class="banner_content">
-						<h1 class="banner_text"><?php echo $results[0]['comparative_text']?></h1>
 						<div class="banner_price"><span>Rs <?php echo $results[0]['was_price']?></span>Rs <?php echo $results[0]['now_price']?></div>
 						<div class="banner_product_name"><?php echo $results[0]['name']?></div>
-						<div class="button banner_button"><a href="product.php">Detail</a></div>
+						<div class="button banner_button"><a href="product.php?id=<?php echo $results[0]['id']?>">Detail</a></div>
 					</div>
 				</div>
 			</div>
@@ -49,6 +46,27 @@ die;*/
 
     <div class="col-lg-12">
 
+        <div class="shop_content">
+            <div class="shop_bar clearfix">
+                <div class="shop_product_count" style="    width: 100%;height: 30px; background-color: #d0e2f1;margin-top: 15px; padding: 5px;"><span>Top Stores</div>
+            </div>
+
+            <div class="row">
+
+                <!-- Product Item -->
+                <?php foreach ($stores as $store){ ?>
+                    <div class="product_item  col-lg-2">
+                        <div class="product_border"></div>
+                        <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="admin/uploads/store/<?php echo $store['image'];?>" alt=""></div>
+                        <div class="product_content">
+                            <div class="product_name"><div><a href="shop.php?store_id=<?php echo $store['id'];?>" tabindex="0"><?php echo $store['store_name'];?></a></div></div>
+                        </div>
+                    </div>
+                <?php } ?>
+
+            </div>
+
+        </div>
         <!-- Shop Content -->
 
         <div class="shop_content">
@@ -74,9 +92,6 @@ die;*/
 
 
 	<!-- Footer -->
-
-    <?php include('include/footer.php') ?>
-
 
         <div class="col-lg-12">
 

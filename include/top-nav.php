@@ -75,7 +75,7 @@
                             <ul class="standard_dropdown main_nav_dropdown">
                                 <li><a href="index.php">Home<i class="fas fa-chevron-down"></i></a></li>
                                 <li class="hassubs">
-                                    <a href="#">Super Deals</a>
+                                    <a href="deals.php">Super Deals</a>
                                 </li>
                                 <li class="hassubs">
                                     <a href="store.php">Store</i></a>
@@ -90,10 +90,25 @@
                         <!-- Menu Trigger -->
 
                         <div class="menu_trigger_container ml-auto">
-                            <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+                            <div class="menu_trigger d-flex flex-row">
                                 <div class="menu_burger">
-                                    <div class="menu_trigger_text">menu</div>
-                                    <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+
+                                    <div class=" ">
+                                        <ul class="standard_dropdown main_nav_dropdown" style="margin-top: -9px;
+    background-color: white;">
+                                            <li style="    margin-right: 15px"><a href="index.php">Home<i class="fas fa-chevron-down"></i></a></li>
+                                            <li class="hassubs"   style="    margin-right: 15px">
+                                                <a href="deals.php">Super Deals</a>
+                                            </li>
+                                            <li class="hassubs"  style="    margin-right: 15px">
+                                                <a href="store.php">Store</i></a>
+                                            </li>
+                                            <li class="hassubs"  style="    margin-right: 15px">
+                                                <a href="shop.php">Shop</i></a>
+                                            </li>
+                                            <li  style="    margin-right: 15px"><a href="contact.php">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
